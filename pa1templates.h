@@ -100,10 +100,15 @@ namespace underwood
                     const T& eps)
     {
        T v = T(underwood::aNonLinearFunction<T>(x0));
+
+       std::cout << "Newton Method:" << std::endl;
        underwood::DISPLAY_ROW<T>(T(0), x0, v); //output: 0, x0, v
        
        if(std::abs(v) < sigma)
-       { return v; }
+       {
+            underwood::FINISH_TABLE(); 
+            return v; 
+       }
        
        T cx0 = x0;
        int lineNumber = 0; //counter for line breaks
