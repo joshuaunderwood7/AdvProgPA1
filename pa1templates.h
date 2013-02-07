@@ -57,6 +57,23 @@ const T& Newton(const T& x0,
    }
 }
 
+//Secant(a, b, M, δ, ε)
+//fa ← f(a)
+//fb ← f(b)
+//// output: 0, a, fa
+//// output: 1, b, fb
+//for k=2 to M
+//  if |fa| > |fb|
+//    a ↔ b
+//    fa ↔ fb
+//  s ← (b-a)/(fb-fa)
+//  b ← a
+//  fb ← fa
+//  a ← a – fa*s
+//  fa ← f(a)
+//  output: k, a, fa
+//  if |fa| < ε or |b-a| < δ then stop
+
 template <typename T>
 bool underwood::DISPLAY_ROW(const T& a, const T& b, const T& c)
 {

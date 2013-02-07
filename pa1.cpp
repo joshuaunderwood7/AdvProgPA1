@@ -9,6 +9,8 @@ int main(void)
     c = 3.342134123541234;
 
     underwood::DISPLAY_ROW<double>(a,b,c);
+    underwood::DISPLAY_ROW<double>(a,b,c);
+    underwood::FINISH_TABLE();
 
     std::cout << "Press ENTER to continue.\n"; std::getchar();
     return 0;

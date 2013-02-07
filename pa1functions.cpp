@@ -1,7 +1,5 @@
 #include "pa1functions.h"
-#include <cmath>
-#include <iostream>
-#include <iomanip>
+
 
 //f(x) = e^x – 1.5 – tan^-1(x)
 template <typename T>
@@ -41,17 +39,7 @@ const T& underwood::DDXanotherNonLinearFunction(const T& input)
 
 /* moved to pa1templates
 template <typename T>
-bool underwood::DISPLAY_ROW(const T& a, const T& b, const T& c)
-{
-    std::cout << std::setfill('-') << std::setw(39) << "-" << std::endl;
-    std::cout << std::setfill(' ') << std::fixed;
-    std::cout << "|" << std::setw(10) << std::setprecision(0) << a;
-    std::cout << "|" << std::setw(10) << std::setprecision(8) << b;
-    std::cout << "|" << std::setw(10) << std::setprecision(8)<< c;
-    std::cout << "|" << std::endl;
-
-    return true;
-}
+bool underwood::DISPLAY_ROW(const T& a, const T& b, const T& c) {...}
 */
 
 bool underwood::FINISH_TABLE(void)
