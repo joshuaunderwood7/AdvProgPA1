@@ -94,7 +94,7 @@ namespace underwood
     //   cx0 ← x1
 
     template <typename T>
-    T Newton(const T& x0, 
+    T underwood::Newton(const T& x0, 
                     const T& M, 
                     const T& sigma,
                     const T& eps)
@@ -152,7 +152,7 @@ namespace underwood
     //  //output: k, ca, fa
     //  if |fa| < ε or |cb-ca| < δ then stop
     template <typename T>
-    T Secant(const T& a,
+    T underwood::Secant(const T& a,
                     const T& b,
                     const T& M,
                     const T& sigma,
