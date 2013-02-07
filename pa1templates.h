@@ -9,15 +9,20 @@ namespace underwood
 {
     //e^x – 1.5 – tan^-1(x)
     template <typename T>
-	const T& aNonLinearFunction(const T& input);
+	T aNonLinearFunction(const T& input);
 
     //d/dx(f(x)) = e^x-1/(x^2+1)
     template <typename T>
-    const T& DDXaNonLinearFunction(const T& input);
+    T DDXaNonLinearFunction(const T& input);
 
     //x^3 – sinh(x) + 4x^2 + 6x + 9
     template <typename T>
-	const T& anotherNonLinearFunction(const T& input);
+	T anotherNonLinearFunction(const T& input);
+
+    //pre: pass three objects
+    //post: have them displayed in console in "pretty" rows
+    template <typename T>
+    bool DISPLAY_ROW(const T& a, const T& b, const T& c);
 
     template <typename T>
     T Newton(const T& x0, 
@@ -31,26 +36,21 @@ namespace underwood
                     const T& M,
                     const T& sigma,
                     const T& eps);
-
-    //pre: pass three objects
-    //post: have them displayed in console in "pretty" rows
-    template <typename T>
-    bool DISPLAY_ROW(const T& a, const T& b, const T& c);
-
-    #include "pa1templates.tem"
+}
+        #include "pa1templates.tem"
 
 //------------cut this into the pa1template.tem----------------
 
     //f(x) = e^x – 1.5 – tan^-1(x)
     template <typename T>
-    const T& underwood::aNonLinearFunction(const T& input)
+    T underwood::aNonLinearFunction(const T& input)
     {
 	    return (std::exp(input) - T(1.5) - std::atan(input));
     }
 
     //d/dx(f(x)) = e^x-1/(x^2+1)
     template <typename T>
-    const T& underwood::DDXaNonLinearFunction(const T& input)
+    T underwood::DDXaNonLinearFunction(const T& input)
     {
 	    return (std::exp(input-1) - (T(1)/(std::pow(input, T(2)) + T(1))));
     }
@@ -58,7 +58,7 @@ namespace underwood
 
     //f(x) = x^3 – sinh(x) + 4x^2 + 6x + 9
     template <typename T>
-    const T& underwood::anotherNonLinearFunction(const T& input)
+    T underwood::anotherNonLinearFunction(const T& input)
     {
 	    return (std::pow(input, T(3)) 
             - std::sinh(input) 
@@ -123,8 +123,8 @@ namespace underwood
            //breakup the output into 20 line segments
            if( lineNumber > 20 )
            { 
-           std::cout << "Press ENTER to continue.\n"; std::getchar(); 
-           lineNumber = 0; 
+               underwood::ENTER_TO_CONTINUE();
+               lineNumber = 0; 
            }
          
        } 
@@ -185,10 +185,10 @@ namespace underwood
         }
         underwood::FINISH_TABLE();
         std::cout << "Reached M" << std::endl;
-        return v;
+        return fa;
     }
 
 
-}
+
 
 //#endif

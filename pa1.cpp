@@ -8,6 +8,6 @@ int main(void)
 
     //a=0, b=9, δ=10-6, ε=10-6, M=100 for the Secant method
 
-    std::cout << "Press ENTER to continue.\n"; std::getchar();
+    underwood::ENTER_TO_CONTINUE();
     return 0;
 }
