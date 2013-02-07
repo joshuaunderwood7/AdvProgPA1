@@ -1,16 +1,12 @@
-#include "pa1functions.h"
+﻿#include "pa1functions.h"
 #include "pa1templates.h"
 
 int main(void)
 {
-    double a,b,c;
-    a = 1.1;
-    b = 2.31213213452345;
-    c = 3.342134123541234;
+    //δ=10-6, ε=10-6, M=100, x0=1 for Newton’s method
+    underwood::Newton<double>(1,100,(10-6),10-6);
 
-    underwood::DISPLAY_ROW<double>(a,b,c);
-    underwood::DISPLAY_ROW<double>(a,b,c);
-    underwood::FINISH_TABLE();
+    //a=0, b=9, δ=10-6, ε=10-6, M=100 for the Secant method
 
     std::cout << "Press ENTER to continue.\n"; std::getchar();
     return 0;

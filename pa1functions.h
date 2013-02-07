@@ -22,11 +22,6 @@ namespace underwood
     template <typename T>
     const T& DDXanotherNonLinearFunction(const T& input);
 
-    //pre: pass three objects
-    //post: have them displayed in console in "pretty" rows
-    template <typename T>
-    bool DISPLAY_ROW(const T& a, const T& b, const T& c);
-
     bool FINISH_TABLE(void);
 }
 
