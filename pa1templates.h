@@ -70,11 +70,11 @@ namespace underwood
     template <typename T>
     bool underwood::DISPLAY_ROW(const T& a, const T& b, const T& c)
     {
-        std::cout << std::setfill('-') << std::setw(39) << "-" << std::endl;
+        std::cout << std::setfill('-') << std::setw(54) << "-" << std::endl;
         std::cout << std::setfill(' ') << std::fixed;
-        std::cout << "|"  << std::setw(10) << std::setprecision(0) << a;
-        std::cout << " | " << std::setw(10) << std::setprecision(8) << b;
-        std::cout << " | " << std::setw(10) << std::setprecision(8) << c;
+        std::cout << "|"  << std::setw(15) << std::setprecision(0) << a;
+        std::cout << " | " << std::setw(15) << std::setprecision(8) << b;
+        std::cout << " | " << std::setw(15) << std::setprecision(8) << c;
         std::cout << " | " << std::endl;
     
         return true;

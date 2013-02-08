@@ -9,7 +9,7 @@ bool underwood::DISPLAY_ROW(const T& a, const T& b, const T& c) {...}
 
 bool underwood::FINISH_TABLE(void)
 {
-    std::cout << std::setfill('-') << std::setw(39) << "-" << std::endl;
+    std::cout << std::setfill('-') << std::setw(54) << "-" << std::endl;
     return true;
 }
 
