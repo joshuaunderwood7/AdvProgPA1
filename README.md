@@ -23,7 +23,7 @@ equations. That is, you are to find a value for which f(x) = 0 where f is a real
 
 Input
 A non-linear function, e^x – 1.5 – tan^-1(x), δ=10^-6, ε=10^-6, M=100, x0=1 for Newton’s method and
-x^3 – sinh(x) + 4x^2 + 6x + 9, a=0, b=9, δ=10-6, ε=10-6, M=100 for the Secant method.
+x^3 – sinh(x) + 4x^2 + 6x + 9, a=0, b=9, δ=10^-6, ε=10^-6, M=100 for the Secant method.
 
 Output
 A table of values for each algorithm corresponding to iterations k, x, and f(x) or k, a and fa as
