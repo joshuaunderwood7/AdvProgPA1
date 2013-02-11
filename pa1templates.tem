@@ -61,8 +61,10 @@
        T v = T(underwood::aNonLinearFunction<T>(x0));
 
        std::cout << "Newton Method:" << std::endl;
-       underwood::DISPLAY_ROW<T>(T(0), x0, v); //output: 0, x0, v
        
+       underwood::DISPLAY_ROW<std::string>("k", "x", "f(x)"); //output: 0, x0, v
+       underwood::DISPLAY_ROW<T>(T(0), x0, v); //output: 0, x0, v
+
        if(std::abs(v) < sigma)
        {
             underwood::FINISH_TABLE(); 
@@ -127,8 +129,11 @@
         T fa = underwood::anotherNonLinearFunction(a);
         T fb = underwood::anotherNonLinearFunction(b);
         std::cout << "Secant Method:" << std::endl;
+
+        underwood::DISPLAY_ROW<std::string>("k", "a", "fa"); //output: 0, x0, v
         underwood::DISPLAY_ROW<T>(T(0), a, fa); //output: 0, a, fa
         underwood::DISPLAY_ROW<T>(T(1), b, fb); //output: 1, b, fb
+        
         for(T k=T(2); k <= M; ++k)
         {
             if(std::abs(fa) > std::abs(fb))

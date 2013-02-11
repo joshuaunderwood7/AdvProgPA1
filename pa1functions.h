@@ -6,7 +6,8 @@
 
 namespace underwood
 {
-	bool FINISH_TABLE(void);
+	bool GREETING(void);
+    bool FINISH_TABLE(void);
     bool ENTER_TO_CONTINUE(void);
 
 }
