@@ -1,4 +1,13 @@
-﻿#include "pa1functions.h"
+﻿/* CSCI 3320 PA 1
+ * By Joshua Underwood
+ *
+ * this program is made to meet the requirements of PA1
+ * To make a teplate function of Newton and Secant methods
+ * to solve for zeros of a non-liniear function
+ *
+ *
+*/
+#include "pa1functions.h"
 #include "pa1templates.h"
 
 int main(void)
