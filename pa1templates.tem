@@ -6,11 +6,11 @@
 	    return (std::exp(input) - T(1.5) - std::atan(input));
     }
 
-    //d/dx(f(x)) = e^x-1/(x^2+1)
+    //d/dx(f(x)) = e^x/(x^2+1)
     template <typename T>
     T underwood::DDXaNonLinearFunction(const T& input)
     {
-	    return (std::exp(input-1) - (T(1)/(std::pow(input, T(2)) + T(1))));
+	    return (std::exp(input) - (T(1)/(std::pow(input, T(2)) + T(1))));
     }
 
 
