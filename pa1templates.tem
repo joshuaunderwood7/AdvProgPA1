@@ -112,7 +112,7 @@
     //  s ← (cb-ca)/(fb-fa)
     //  cb ← ca
     //  fb ← fa
-    //  ca ← ca – fa*s
+    //  ca ← ca – fa * s
     //  fa ← f(ca)
     //  //output: k, ca, fa
     //  if |fa| < ε or |cb-ca| < δ then stop
@@ -124,9 +124,10 @@
                     const T& eps)
     {
         T ca = a; //"copy of a"
-        T cb = a; //"copy of b"
+        T cb = b; //"copy of b"
         T fa = underwood::anotherNonLinearFunction(a);
         T fb = underwood::anotherNonLinearFunction(b);
+        T s;
         std::cout << "Secant Method:" << std::endl;
 
         underwood::DISPLAY_ROW<std::string>("k", "a", "fa"); //output: 0, x0, v
@@ -140,10 +141,11 @@
                 std::swap<T>(ca, cb);
                 std::swap<T>(fa, fb);
             }
-            T s  = ( (cb-ca)/(fb-fa) );
+
+            s  = ( (cb-ca)/(fb-fa) );
             cb = ca;
             fb = fa;
-            ca = ( ca - (fa*s) );
+            ca -= (fa*s);
             fa = underwood::anotherNonLinearFunction(ca);
             underwood::DISPLAY_ROW<T>(k, ca, fa); //output: k, ca, fa
             if( (std::abs(fa) < eps) || (std::abs(cb-ca) < sigma) )
